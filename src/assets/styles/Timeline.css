@@ -3,22 +3,10 @@
     font-family: 'Courier Prime', monospace;
 }
 
-.vertical-timeline p {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element p {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element h3 {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element h4 {
-    color: rgb(39, 40, 34);
-}
-
+.vertical-timeline p,
+.vertical-timeline-element p,
+.vertical-timeline-element h3,
+.vertical-timeline-element h4,
 .vertical-timeline-element span {
     color: rgb(39, 40, 34);
 }
