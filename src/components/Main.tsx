@@ -1,24 +1,22 @@
 import React from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 import "../assets/styles/Main.css";
-import avatar from "../assets/images/photo_2025-05-24_14-02-51-modified.png";
 
-<img src={avatar} alt="Avatar" />;
+
 
 function Main() {
   return (
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          <img src={avatar} alt="Avatar" />
+        
         </div>
         <div className="content">
-          <div className="social_icons">
+          <div className="social_icons"> 
             <a
               href="https://github.com/amira-abubakr"
               target="_blank"
@@ -33,13 +31,7 @@ function Main() {
             >
               <LinkedInIcon />
             </a>
-            <a
-              href="https://twitter.com/your_username"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <TwitterIcon />
-            </a>
+       
             <a
               href="https://www.facebook.com/your_username"
               target="_blank"
@@ -73,13 +65,7 @@ function Main() {
             >
               <LinkedInIcon />
             </a>
-            <a
-              href="https://twitter.com/your_username"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <TwitterIcon />
-            </a>
+          
             <a
               href="https://www.facebook.com/your_username"
               target="_blank"

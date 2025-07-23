@@ -107,6 +107,8 @@ function Navigation({ parentToChild, modeChange }: any) {
           >
             <MenuIcon />
           </IconButton>
+
+        
           <Button
             className="logo"
             variant="outlined"
@@ -123,9 +125,10 @@ function Navigation({ parentToChild, modeChange }: any) {
               },
             }}
           >
-            Resume 
+            Download CV
             <FontAwesomeIcon icon={faDownload} className="marginLeft: 10px" />
           </Button>
+        
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button
