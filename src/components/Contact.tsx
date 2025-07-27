@@ -1,34 +1,51 @@
 import React, { useRef, useState } from "react";
 import "../assets/styles/Contact.css";
-// import emailjs from '@emailjs/browser';
+import emailjs from "emailjs-com";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import TextField from "@mui/material/TextField";
-import { useForm, ValidationError } from "@formspree/react";
+import { toast, ToastContainer } from "react-toastify";
 
 function Contact() {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
-
-  const [nameError, setNameError] = useState<boolean>(false);
-  const [emailError, setEmailError] = useState<boolean>(false);
-  const [messageError, setMessageError] = useState<boolean>(false);
-
   const form = useRef();
-  const [state, handleSubmit] = useForm("xnnzpqek");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  if (state.succeeded) {
-    return <h2>Thanks for joining!</h2>;
-  }
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
 
-  const sendEmail = (e: any) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setNameError(name === "");
     setEmailError(email === "");
     setMessageError(message === "");
+
+    if (name && email && message) {
+      emailjs
+        .sendForm(
+          "service_5on2vnf",
+          "template_w6yphpd",
+          form.current!,
+          "RKcTYVks6vGpk-n2j"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            toast.success("✅ تم إرسال الرسالة بنجاح!");
+            setName("");
+            setEmail("");
+            setMessage("");
+          },
+          (error) => {
+            console.log(error.text);
+            toast.error("❌ حصلت مشكلة أثناء الإرسال، جربي تاني.");
+          }
+        );
+    }
   };
 
   return (
@@ -41,90 +58,60 @@ function Contact() {
             happen!
           </p>
           <Box
-            onSubmit={handleSubmit}
-            ref={form}
             component="form"
+            ref={form}
+            onSubmit={sendEmail}
             noValidate
             autoComplete="off"
             className="contact-form"
           >
             <div className="form-flex">
-            <TextField
-  name="name"
-  required
-  id="outlined-required"
-  label="Your Name"
-  placeholder="What's your name?"
-  value={name}
-  onChange={(e) => {
-    setName(e.target.value);
-  }}
-  error={nameError}
-  helperText={nameError ? "Please enter your name" : ""}
-  sx={{
-    input: {
-      color: 'red', // غيري اللون اللي يعجبك
-    },
-  }}
-/>
-
-              <ValidationError
-                prefix="Name"
-                field="name"
-                errors={state.errors}
-              />
+              <TextField
+                name="name"
+                required
+                label="Your Name"
+                placeholder="What's your name?"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+               className="body-form"
+                error={nameError}
+                helperText={nameError ? "Please enter your name" : ""}
+               />
               <TextField
                 name="email"
                 required
-                id="outlined-required"
                 label="Email / Phone"
                 placeholder="How can I reach you?"
                 value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                onChange={(e) => setEmail(e.target.value)}
+              className="body-form"
                 error={emailError}
                 helperText={
                   emailError ? "Please enter your email or phone number" : ""
                 }
               />
-              <ValidationError
-                prefix="Email"
-                field="email"
-                errors={state.errors}
-              />
             </div>
             <TextField
+            
               required
-              id="outlined-multiline-static"
-              label="Message"
-              placeholder="Send me any inquiries or questions"
               multiline
               rows={10}
               name="message"
+              label="Message"
+              placeholder="Send me any inquiries or questions"
               className="body-form"
               value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
+              onChange={(e) => setMessage(e.target.value)}
+            
               error={messageError}
               helperText={messageError ? "Please enter the message" : ""}
+      
             />
-            <ValidationError
-              prefix="Message"
-              field="message"
-              errors={state.errors}
-            />
-            <Button
-              type="submit"
-              disabled={state.submitting}
-              variant="contained"
-              endIcon={<SendIcon />}
-              onClick={sendEmail}
-            >
+            <Button type="submit" variant="contained" endIcon={<SendIcon />}>
               Send
             </Button>
           </Box>
+          <ToastContainer position="bottom-center" autoClose={3000} />
         </div>
       </div>
     </div>

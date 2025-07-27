@@ -15,7 +15,7 @@ code {
 
 .main-container {
   position: relative;
-  background-color: #0d1116;
+  background-color: #2d3436;
 }
 
 a {
@@ -23,7 +23,7 @@ a {
 }
 
 a:hover {
-  color: #5000ca;
+  color: #a29bfe;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
@@ -34,7 +34,7 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
 .navigation-bar {
   justify-content: space-between;
-  background-color: #0d1116;
+  background-color: #2d3436;
 }
 
 .navigation-bar button {

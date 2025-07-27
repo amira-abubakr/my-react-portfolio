@@ -1,5 +1,7 @@
 import React from "react";
 
+import project6 from '../assets/images/project4.jpg';
+import project5 from '../assets/images/project4.jpg';
 import project4 from '../assets/images/project4.jpg';
 import project2 from '../assets/images/project2.jpg';
 import project3 from '../assets/images/project3.jpg';
@@ -30,6 +32,16 @@ function Project() {
                 <a href="https://waffy.vercel.app/" target="_blank" rel="noreferrer"><img src={project4} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://waffy.vercel.app/" target="_blank" rel="noreferrer"><h2>Waffy Project </h2></a>
                 <p> A full-stack marketplace application enabling real-time product listings, buyer-seller messaging,and seamless checkout flows.</p>
+            </div>
+            <div className="project">
+                <a href="https://planb-client.vercel.app/" target="_blank" rel="noreferrer"><img src={project5} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://planb-client.vercel.app/" target="_blank" rel="noreferrer"><h2> Plan B Platform </h2></a>
+                <p> A subscription-based system with dynamic user roles, plan creation, and JWT-based authentication and access control.</p>
+            </div>
+            <div className="project">
+                <a href="/" target="_blank" rel="noreferrer"><img src={project6} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="//" target="_blank" rel="noreferrer"><h2> Alsakr Group</h2></a>
+                <p> A web platform for showcasing and selling fresh fruits and vegetables in an organized, user-friendly way.</p>
             </div>
         
         </div>

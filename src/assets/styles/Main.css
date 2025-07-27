@@ -1,5 +1,5 @@
 .dark-mode .about-section {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #192a56;
 }
 
 .about-section {
@@ -57,7 +57,7 @@
     margin-block-end: 0px;
 }
 .about-section .content p:hover {
-   color: #5000ca;
+   color: #a29bfe;
 }
 
 .about-section .content h1 {

@@ -27,7 +27,6 @@ const navItems = [
 ];
 
 function Navigation({ parentToChild, modeChange }: any) {
-  const { mode } = parentToChild;
 
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -109,26 +108,29 @@ function Navigation({ parentToChild, modeChange }: any) {
           </IconButton>
 
         
-          <Button
-            className="logo"
-            variant="outlined"
-            sx={{
-              backgroundColor: "transparent",
-             marginLeft: "30px",
-              color: "#fff",
-              borderColor: "#5000ca",
-              "&:hover": {
-              
-                borderColor: "#000",
-                backgroundColor: "#5000ca",
-                transition: "color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out",
-              },
-            }}
-          >
-            Download CV
-            <FontAwesomeIcon icon={faDownload} className="marginLeft: 10px" />
-          </Button>
-        
+        <a  target="_blank"
+              rel="noreferrer" href="/Amira.cv.pdf" download style={{ textDecoration: "none" }}>
+  <Button
+    className="logo"
+    variant="outlined"
+    sx={{
+      backgroundColor: "transparent",
+      marginLeft: "30px",
+      color: "#fff",
+      borderColor: "#fff",
+      "&:hover": {
+        borderColor: "#000",
+        backgroundColor: "#a29bfe",
+        transition:
+          "color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out",
+      },
+    }}
+  >
+    Download CV
+    <FontAwesomeIcon icon={faDownload} style={{ marginLeft: "10px" }} />
+  </Button>
+</a>
+
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button

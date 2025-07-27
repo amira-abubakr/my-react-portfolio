@@ -17,7 +17,7 @@ function Timeline() {
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
             date="Jul 2024 - Sept 2024"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#a29bfe', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faLaptopCode} />}
           >
             <h3 className="vertical-timeline-element-title"> Frontend Developer Intern</h3>
@@ -31,7 +31,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="2024 - now"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#a29bfe', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Freelance Frontend Developer</h3>
@@ -45,7 +45,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="2025 - now"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#a29bfe', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBookOpen} />}
           >
             <h3 className="vertical-timeline-element-title">Currently Learning Next.js</h3>
@@ -58,7 +58,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="Jul 2025 -  Sept 2025"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#a29bfe', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faPenNib} />}
           >
             <h3 className="vertical-timeline-element-title">UI/UX Design Trainee</h3>
