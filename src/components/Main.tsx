@@ -33,7 +33,7 @@ function Main() {
             />
           </h1>
           
-  <p>I build responsive websites using React.js with a focus on performance and clean UI/UX.</p>
+  <p>Front-End Developer.</p>
 
 
             <div
@@ -55,7 +55,7 @@ function Main() {
             </a>
        
             <a
-              href="https://www.facebook.com/your_username"
+              href="https://www.facebook.com/amira.abubakr.badran"
               target="_blank"
               rel="noreferrer"
             >
@@ -87,7 +87,7 @@ function Main() {
             </a>
           
             <a
-              href="https://www.facebook.com/your_username"
+              href="https://www.facebook.com/amira.abubakr.badran"
               target="_blank"
               rel="noreferrer"
             >

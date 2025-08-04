@@ -12,7 +12,7 @@ function Footer() {
       <div>
         <a href="https://github.com/amira-abubakr" target="_blank" rel="noreferrer"><GitHubIcon/></a>
         <a href="https://www.linkedin.com/in/amira-abubakr/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-        <a href="https://www.facebook.com/your_username" target="_blank" rel="noreferrer"><FacebookIcon/></a>
+        <a href="https://www.facebook.com/amira.abubakr.badran" target="_blank" rel="noreferrer"><FacebookIcon/></a>
         <a href="https://www.instagram.com/your_username" target="_blank" rel="noreferrer"><InstagramIcon/></a>
 
       </div>
