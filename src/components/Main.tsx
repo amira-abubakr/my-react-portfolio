@@ -62,7 +62,7 @@ function Main() {
               <FacebookIcon />
             </a>
             <a
-              href="https://www.instagram.com/your_username"
+              href="https://www.instagram.com/am_bakr7?igsh=MTZjbmFheXhjZ3hz"
               target="_blank"
               rel="noreferrer"
             >
@@ -94,7 +94,7 @@ function Main() {
               <FacebookIcon />
             </a>
             <a
-              href="https://www.instagram.com/your_username"
+              href="https://www.instagram.com/am_bakr7?igsh=MTZjbmFheXhjZ3hz"
               target="_blank"
               rel="noreferrer"
             >
