@@ -21,15 +21,15 @@
 }
 
 .chip {
-    color: rgb(39, 40, 34) !important;
-    background-color: white !important;
+    color: #00FFF7 !important;
+    background-color: #1f2125  !important;
     font-size: 0.8rem !important;
     height: 25px !important;
+    box-shadow: 0 2px 5px #a0aab499;
 }
 
 .chip span {
-    font-family: 'Courier Prime', monospace;
-    color: rgb(39, 40, 34);
+  font-family: "Merriweather", serif;
 }
 
 .chip svg {
@@ -39,6 +39,7 @@
 .flex-chips {
     line-height: 2;
     margin: 0.5;
+    
 }
 
 .flex-chips .chip-title {
@@ -52,8 +53,7 @@
 
 .flex-chips .MuiChip-outlined {
     background-color: #e0e0e0;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
+  font-family: "Merriweather", serif;}
 
 .flex-chips .MuiChip-outlined span {
     color: rgb(39, 40, 34);

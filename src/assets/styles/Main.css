@@ -11,7 +11,7 @@
     width: 100%;
     padding: 0px 15%;
     min-height: 700px;
-    background-image: url("../images/4.jpeg");
+background: linear-gradient(135deg, #000000 0%, #003f3f 50%, #00FFF7 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -22,6 +22,7 @@
 .about-section::before {
     content: "";
     position: absolute;
+    
     top: 0;
     left: 0;
     width: 100%;
@@ -55,15 +56,15 @@
     font-size: 1.5em;
     margin-block-start: 0px;
     margin-block-end: 0px;
+      margin-bottom: 1rem;
 }
-.about-section .content p:hover {
-   color: #a29bfe;
-}
+
 
 .about-section .content h1 {
     font-size: 5em;
     margin-block-start: 0px;
     margin-block-end: 0px;
+     
 }
 
 .about-section .image-wrapper {
@@ -119,6 +120,7 @@
         padding-right: 5%;
         font-size: 12px;
     }
+    
 }
 
 /* Media Query: max-width 768px */

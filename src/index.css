@@ -1,21 +1,21 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+ font-family: "Merriweather", serif;
+ 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.1rem !important;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace !important;
+  font-family: "Merriweather", serif;
+ 
   font-size: 1rem !important;
 }
 
 .main-container {
   position: relative;
-  background-color: #2d3436;
+  background-color: #000;
 }
 
 a {
@@ -23,24 +23,23 @@ a {
 }
 
 a:hover {
-  color: #a29bfe;
+  color: #00FFF7;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
 p, a, h1, h2, h3, h4, h5, label, button {
   color: white;
-  font-family: "Lato", sans-serif;
-}
+  font-family: "Merriweather", serif;}
 
 .navigation-bar {
   justify-content: space-between;
-  background-color: #2d3436;
+  background-color: #000;
 }
 
 .navigation-bar button {
   font-size: 1.1rem;
-  font-family: "Lato", sans-serif;
-  text-transform: initial;
+  font-family: "Merriweather", serif; 
+   text-transform: initial;
   padding: 6px 10px;
 }
 
@@ -50,8 +49,16 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
 .navigation-bar-responsive span,
 .navigation-bar-responsive p {
-  color: #0d1116;
-  font-family: "Lato", sans-serif;
+  color: #fff;
+   font-family: "Merriweather", serif; 
+}
+.navigation-bar-responsive{
+ background-color: #2d3436;
+}
+.navigation-bar-responsive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -80,6 +87,7 @@ p, a, h1, h2, h3, h4, h5, label, button {
   align-items: center;
   gap: 5px;
   font-weight: bold;
+
 }
 
 .items-container {

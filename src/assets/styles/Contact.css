@@ -15,7 +15,7 @@
 }
 
 .contact-form button:hover {
-  background-color: #a29bfe;
+  background-color: #00FFF7;
   color: white;
 }
 .body-form{
@@ -27,12 +27,12 @@
 
 label {
   font-size: 1.2rem;
-  font-family: 'DomaineDispNar-Medium', sans-serif;
-  color: #a29bfe;
+  font-family: "Merriweather", serif; 
+   color: #00FFF7;
 }
 label:focus{
-  color: #a29bfe;
-  border-color: #a29bfe;
+  color: #00FFF7;
+  border-color: #00FFF7;
   outline : none;
 }
 
@@ -53,4 +53,39 @@ form {
 .body-form {
   width: 100% !important;
   margin-bottom: 15px !important;
+}
+.email-box {
+  margin-top: 2rem;
+  display: flex;
+background: linear-gradient(135deg, #000000 0%, #003f3f 50%, #00FFF7 100%);
+  align-items: center;
+  justify-content: space-around;
+ padding: 50px 20px;
+ border-radius: 10px;
+  
+}
+
+.email-text {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.email-text span {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+@media (min-width: 576px) {
+  .email-text span {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .email-text span {
+    font-size: 1.6rem;
+  }
 }

@@ -66,7 +66,7 @@ function Navigation({ parentToChild, modeChange }: any) {
     <Box
       className="navigation-bar-responsive"
       onClick={handleDrawerToggle}
-      sx={{ textAlign: "center" }}
+      sx={{ textAlign: "center",   height: "100%", }}
     >
       <p className="mobile-menu-top">
         <ListIcon />
@@ -108,28 +108,36 @@ function Navigation({ parentToChild, modeChange }: any) {
           </IconButton>
 
         
-        <a  target="_blank"
-              rel="noreferrer" href="/Amira.cv.pdf" download style={{ textDecoration: "none" }}>
+        <a
+  target="_blank"
+  rel="noreferrer"
+  href="/Amira.cv.pdf"
+  download
+  style={{ textDecoration: "none" }}
+>
   <Button
-    className="logo"
     variant="outlined"
     sx={{
-      backgroundColor: "transparent",
+      fontSize: { xs: "0.7rem", sm: "0.875rem" },
+      padding: { xs: "4px 8px", sm: "8px 16px" },
+      backgroundColor: "#1f2125 ",
       marginLeft: "30px",
-      color: "#fff",
-      borderColor: "#fff",
+      color: "#00FFF7",
+      borderColor: "#1f2125",
       "&:hover": {
-        borderColor: "#000",
-        backgroundColor: "#a29bfe",
+        borderColor: "#1f2125",
+       
         transition:
+        
           "color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out",
       },
     }}
   >
     Download CV
-    <FontAwesomeIcon icon={faDownload} style={{ marginLeft: "10px" }} />
+    <FontAwesomeIcon icon={faDownload} style={{ marginLeft: "10px",fontSize:"bold",color:"#00FFF7" }} />
   </Button>
 </a>
+
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (

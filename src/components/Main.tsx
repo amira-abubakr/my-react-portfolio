@@ -3,10 +3,11 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-
-import { motion } from 'framer-motion';
+import { Typewriter } from 'react-simple-typewriter';
 
 import "../assets/styles/Main.css";
+import ScrollToTopButton from "./Arrow";
+
 
 
 
@@ -19,25 +20,24 @@ function Main() {
         </div>
         <div className="content">
         
-         <motion.h1
-  initial={{ opacity: 0, y: 50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
->
-  Amira Abubakr
-</motion.h1>
-          <motion.p
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
->
-  Front End Developer
-</motion.p>
-            <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+     <h1 style={{color:'#00FFF7'}}>
+            <Typewriter
+              words={['Amira Abubakr..']}
+              loop={1}
+              
+                cursor={false}
+              cursorStyle="|"
+              typeSpeed={90}
+              deleteSpeed={50}
+              delaySpeed={3000}
+            />
+          </h1>
+          
+  <p>I build responsive websites using React.js with a focus on performance and clean UI/UX.</p>
 
+
+            <div
+           
              className="social_icons">
               <a
                 href="https://github.com/amira-abubakr"
@@ -68,7 +68,7 @@ function Main() {
             >
               <InstagramIcon />
             </a>
-          </motion.div>
+          </div>
 
           <div className="mobile_social_icons">
             <a
@@ -103,7 +103,10 @@ function Main() {
           </div>
         </div>
       </div>
+      <ScrollToTopButton />
+
     </div>
+    
   );
 }
 

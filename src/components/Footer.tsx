@@ -16,7 +16,7 @@ function Footer() {
         <a href="https://www.instagram.com/your_username" target="_blank" rel="noreferrer"><InstagramIcon/></a>
 
       </div>
-      <p>A portfolio designed & built by <a href="https://github.com/amira-abubakr/my-react-portfolio?tab=readme-ov-file" target="_blank" rel="noreferrer">Amira Abubakr</a> with 💜</p>
+      <p>A portfolio designed & built by <a href="https://github.com/amira-abubakr/my-react-portfolio?tab=readme-ov-file" target="_blank" rel="noreferrer">Amira Abubakr</a> </p>
     </footer>
   );
 }

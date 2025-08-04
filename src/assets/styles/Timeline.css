@@ -1,6 +1,9 @@
 .vertical-timeline span {
-    color: white;
-    font-family: 'Courier Prime', monospace;
+    color: rgb(39, 40, 34);
+  font-family: "Merriweather", serif;}
+.vertical-timeline-element--work:hover{
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
 }
 
 .vertical-timeline p,
@@ -8,7 +11,7 @@
 .vertical-timeline-element h3,
 .vertical-timeline-element h4,
 .vertical-timeline-element span {
-    color: rgb(39, 40, 34);
+    color: rgb(255, rgb(39, 40, 34), 255);
 }
 
 .vertical-timeline-element .vertical-timeline-element-date {
@@ -16,7 +19,7 @@
 }
 
 .svg-inline--fa {
-    color: white;
+    color:white;
 }
 
 @media screen and (max-width: 1170px) {
