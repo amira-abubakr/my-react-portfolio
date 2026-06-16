@@ -1,15 +1,73 @@
+/* =============================================
+   FOOTER
+   ============================================= */
 footer {
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+/* Social icons row */
+footer > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 1.25rem;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: all 0.25s ease;
+}
+
+footer a:hover {
+  background: rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.4);
+  color: var(--accent-light);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
 }
 
 footer svg {
-    width: 1.1em !important;
-    height: 1.1em !important;
-    margin-right: 10px;
+  width: 1.1em !important;
+  height: 1.1em !important;
+  margin: 0 !important;
 }
 
 footer p {
-    font-size: 0.8em;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+footer p a {
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+  padding: 0;
+  display: inline;
+  color: var(--accent-light);
+  font-weight: 500;
+  border-radius: 0;
+}
+
+footer p a:hover {
+  background: none;
+  border: none;
+  color: var(--accent-glow);
+  transform: none;
+  box-shadow: none;
 }

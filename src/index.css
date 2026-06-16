@@ -1,66 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* =============================================
+   DESIGN SYSTEM — CSS VARIABLES
+   ============================================= */
+:root {
+  /* Background */
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-card: #1c2330;
+  --bg-card-hover: #212936;
+
+  /* Accent — Violet/Purple */
+  --accent: #7c3aed;
+  --accent-light: #a855f7;
+  --accent-glow: #c084fc;
+  --accent-dim: rgba(124, 58, 237, 0.15);
+  --accent-border: rgba(124, 58, 237, 0.4);
+
+  /* Text */
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+
+  /* Border */
+  --border: #30363d;
+  --border-subtle: #21262d;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #0d1117 0%, #130d2b 50%, #1a0d3a 100%);
+  --gradient-accent: linear-gradient(135deg, #7c3aed, #a855f7);
+  --gradient-text: linear-gradient(135deg, #a855f7, #c084fc, #e879f9);
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(124, 58, 237, 0.3);
+  --shadow-glow-sm: 0 0 12px rgba(124, 58, 237, 0.2);
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
- font-family: "Merriweather", serif;
- 
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1.1rem !important;
+  font-size: 1rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
 code {
-  font-family: "Merriweather", serif;
- 
-  font-size: 1rem !important;
+  font-family: 'Inter', monospace;
+  font-size: 0.95rem;
 }
 
+/* =============================================
+   MAIN CONTAINER
+   ============================================= */
 .main-container {
   position: relative;
-  background-color: #000;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
 }
 
+/* =============================================
+   LINKS
+   ============================================= */
 a {
   text-decoration: none;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #00FFF7;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  color: var(--accent-light);
 }
 
+/* =============================================
+   TYPOGRAPHY
+   ============================================= */
 p, a, h1, h2, h3, h4, h5, label, button {
-  color: white;
-  font-family: "Merriweather", serif;}
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+}
 
+h1 { font-weight: 800; letter-spacing: -0.03em; }
+h2 { font-weight: 700; letter-spacing: -0.02em; }
+h3 { font-weight: 600; }
+
+/* =============================================
+   SECTION HEADINGS (shared)
+   ============================================= */
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+/* =============================================
+   NAVIGATION BAR
+   ============================================= */
 .navigation-bar {
   justify-content: space-between;
-  background-color: #000;
+  background-color: transparent !important;
 }
 
 .navigation-bar button {
-  font-size: 1.1rem;
-  font-family: "Merriweather", serif; 
-   text-transform: initial;
-  padding: 6px 10px;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  padding: 6px 12px;
+  letter-spacing: 0;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navigation-bar button:hover {
+  background: var(--accent-dim) !important;
+  color: var(--accent-light) !important;
 }
 
 .navigation-bar svg {
   cursor: pointer;
 }
 
+/* Mobile drawer */
+.navigation-bar-responsive {
+  background-color: var(--bg-secondary) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
 .navigation-bar-responsive span,
 .navigation-bar-responsive p {
-  color: #fff;
-   font-family: "Merriweather", serif; 
+  color: var(--text-primary) !important;
+  font-family: 'Inter', sans-serif;
 }
-.navigation-bar-responsive{
- background-color: #2d3436;
-}
+
 .navigation-bar-responsive {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* =============================================
+   CONTAINER UTILITY
+   ============================================= */
 .container {
   margin-top: 64px;
   width: 100%;
@@ -70,40 +178,53 @@ p, a, h1, h2, h3, h4, h5, label, button {
   justify-content: center;
 }
 
-.header-image {
-  width: 100%;
-  height: 450px;
+/* =============================================
+   ITEMS CONTAINER (shared section wrapper)
+   ============================================= */
+.items-container {
+  padding: 5% 10%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.header-image img {
-  width: 100%;
-  height: 450px;
-  object-fit: cover;
+/* =============================================
+   SCROLLBAR
+   ============================================= */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* =============================================
+   MOBILE MENU TOP
+   ============================================= */
 .mobile-menu-top {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
-  font-weight: bold;
-
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 1rem;
 }
 
-.items-container {
-  padding: 5% 10%;
-  text-align: left;
-  display: flex;
-  
-  flex-direction: column;
-  justify-content: center;
-}
-
-
-
-
-
-/* Responsive */
+/* =============================================
+   RESPONSIVE
+   ============================================= */
 @media screen and (max-width: 768px) {
   .items-container {
     padding: 5% 5%;

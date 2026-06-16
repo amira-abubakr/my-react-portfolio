@@ -15,10 +15,9 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 const navItems = [
   ["Expertise", "expertise"],
   ["History", "history"],
@@ -27,7 +26,6 @@ const navItems = [
 ];
 
 function Navigation({ parentToChild, modeChange }: any) {
-
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -39,26 +37,21 @@ function Navigation({ parentToChild, modeChange }: any) {
     const handleScroll = () => {
       const navbar = document.getElementById("navigation");
       if (navbar) {
-        const scrolled = window.scrollY > navbar.clientHeight;
-        setScrolled(scrolled);
+        const isScrolled = window.scrollY > navbar.clientHeight;
+        setScrolled(isScrolled);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const scrollToSection = (section: string) => {
-    console.log(section);
-    const expertiseElement = document.getElementById(section);
-    if (expertiseElement) {
-      expertiseElement.scrollIntoView({ behavior: "smooth" });
-      console.log("Scrolling to:", expertiseElement); // Debugging: Ensure the element is found
-    } else {
-      console.error('Element with id "expertise" not found'); // Debugging: Log error if element is not found
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -66,25 +59,79 @@ function Navigation({ parentToChild, modeChange }: any) {
     <Box
       className="navigation-bar-responsive"
       onClick={handleDrawerToggle}
-      sx={{ textAlign: "center",   height: "100%", }}
+      sx={{ textAlign: "center", height: "100%" }}
     >
       <p className="mobile-menu-top">
-        <ListIcon />
+        <ListIcon style={{ marginRight: 8 }} />
         Menu
       </p>
-      <Divider />
-      <List>
+      <Divider sx={{ borderColor: '#30363d' }} />
+      <List sx={{ pt: 1 }}>
         {navItems.map((item) => (
           <ListItem key={item[0]} disablePadding>
             <ListItemButton
-              sx={{ textAlign: "center" }}
+              sx={{
+                textAlign: "center",
+                borderRadius: '8px',
+                mx: 1,
+                my: 0.25,
+                '&:hover': {
+                  background: 'rgba(124, 58, 237, 0.12)',
+                  '& .MuiListItemText-primary': { color: '#a855f7' }
+                }
+              }}
               onClick={() => scrollToSection(item[1])}
             >
-              <ListItemText primary={item[0]} />
+              <ListItemText
+                primary={item[0]}
+                sx={{
+                  '& .MuiListItemText-primary': {
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 500,
+                    fontSize: '0.95rem',
+                    color: '#e6edf3',
+                    transition: 'color 0.2s',
+                  }
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
+
+      {/* Download CV button in mobile drawer */}
+      <Box sx={{ px: 2, pt: 2 }}>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="/Amira.cv.pdf"
+          download
+          style={{ textDecoration: "none" }}
+        >
+          <Button
+            variant="contained"
+            fullWidth
+            sx={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 600,
+              fontSize: '0.875rem',
+              textTransform: 'none',
+              borderRadius: '10px',
+              background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+              color: 'white',
+              padding: '10px 16px',
+              boxShadow: '0 4px 16px rgba(124, 58, 237, 0.35)',
+              '&:hover': {
+                background: 'linear-gradient(135deg, #6d28d9, #9333ea)',
+                boxShadow: '0 6px 20px rgba(124, 58, 237, 0.5)',
+              },
+            }}
+          >
+            Download CV
+            <FontAwesomeIcon icon={faDownload} style={{ marginLeft: "8px" }} />
+          </Button>
+        </a>
+      </Box>
     </Box>
   );
 
@@ -94,57 +141,87 @@ function Navigation({ parentToChild, modeChange }: any) {
       <AppBar
         component="nav"
         id="navigation"
-        className={`navbar-fixed-top${scrolled ? " scrolled" : ""}`}
+        elevation={0}
+        sx={{
+          background: scrolled
+            ? 'rgba(13, 17, 23, 0.85)'
+            : 'transparent',
+          backdropFilter: scrolled ? 'blur(12px)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+          borderBottom: scrolled ? '1px solid #21262d' : 'none',
+          transition: 'background 0.3s ease, border-bottom 0.3s ease, backdrop-filter 0.3s ease',
+          boxShadow: 'none',
+        }}
       >
-        <Toolbar className="navigation-bar">
+        <Toolbar
+          className="navigation-bar"
+          sx={{ px: { xs: 2, sm: 4 }, minHeight: '68px !important' }}
+        >
+          {/* Mobile menu button */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 2, display: { sm: "none" }, color: '#e6edf3' }}
           >
             <MenuIcon />
           </IconButton>
 
-        
-        <a
-  target="_blank"
-  rel="noreferrer"
-  href="/Amira.cv.pdf"
-  download
-  style={{ textDecoration: "none" }}
->
-  <Button
-    variant="outlined"
-    sx={{
-      fontSize: { xs: "0.7rem", sm: "0.875rem" },
-      padding: { xs: "4px 8px", sm: "8px 16px" },
-      backgroundColor: "#1f2125 ",
-      marginLeft: "30px",
-      color: "#00FFF7",
-      borderColor: "#1f2125",
-      "&:hover": {
-        borderColor: "#1f2125",
-       
-        transition:
-        
-          "color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out",
-      },
-    }}
-  >
-    Download CV
-    <FontAwesomeIcon icon={faDownload} style={{ marginLeft: "10px",fontSize:"bold",color:"#00FFF7" }} />
-  </Button>
-</a>
+          {/* Download CV button */}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="/Amira.cv.pdf"
+            download
+            style={{ textDecoration: "none" }}
+          >
+            <Button
+              variant="contained"
+              sx={{
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 600,
+                fontSize: { xs: "0.78rem", sm: "0.875rem" },
+                textTransform: 'none',
+                padding: { xs: "6px 12px", sm: "8px 18px" },
+                background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+                color: 'white',
+                borderRadius: '10px',
+                boxShadow: '0 4px 16px rgba(124, 58, 237, 0.35)',
+                letterSpacing: '0.01em',
+                transition: 'all 0.25s ease',
+                '&:hover': {
+                  background: 'linear-gradient(135deg, #6d28d9, #9333ea)',
+                  boxShadow: '0 6px 20px rgba(124, 58, 237, 0.5)',
+                  transform: 'translateY(-1px)',
+                },
+              }}
+            >
+              Download CV
+              <FontAwesomeIcon icon={faDownload} style={{ marginLeft: "8px" }} />
+            </Button>
+          </a>
 
-
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          {/* Desktop nav links */}
+          <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 0.5, ml: 'auto' }}>
             {navItems.map((item) => (
               <Button
                 key={item[0]}
                 onClick={() => scrollToSection(item[1])}
-                sx={{ color: "#fff" }}
+                sx={{
+                  color: "#8b949e",
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 500,
+                  fontSize: '0.875rem',
+                  textTransform: 'none',
+                  borderRadius: '8px',
+                  px: 1.5,
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    color: '#a855f7',
+                    background: 'rgba(124, 58, 237, 0.1)',
+                  },
+                }}
               >
                 {item[0]}
               </Button>
@@ -152,19 +229,21 @@ function Navigation({ parentToChild, modeChange }: any) {
           </Box>
         </Toolbar>
       </AppBar>
+
       <nav>
         <Drawer
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
+          ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              background: '#161b22',
+              border: 'none',
+              borderRight: '1px solid #30363d',
             },
           }}
         >

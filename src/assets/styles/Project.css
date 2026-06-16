@@ -1,48 +1,160 @@
+/* =============================================
+   PROJECTS SECTION
+   ============================================= */
 .projects-container {
-    display: flex;
-    flex-direction: column;
-    padding: 5% 10%;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 6% 10%;
+  text-align: left;
+  background: var(--bg-primary);
 }
 
+.projects-container h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a855f7, #c084fc, #e879f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.projects-container h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  border-radius: 2px;
+}
+
+/* =============================================
+   PROJECTS GRID
+   ============================================= */
 .projects-container .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
 }
 
+/* =============================================
+   PROJECT CARD
+   ============================================= */
 .projects-container .projects-grid .project {
-    text-align: left;
+  text-align: left;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.project h2:hover {
-    text-decoration: underline;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+.projects-container .projects-grid .project:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.2), 0 2px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
 }
 
+/* Project image wrapper */
+.project-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(168, 85, 247, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.projects-container .projects-grid .project:hover .project-image-wrapper::after {
+  opacity: 1;
+}
+
+/* Project text area */
+.project-info {
+  padding: 1.25rem 1.5rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.project:hover h2 {
+  color: var(--accent-light);
+}
+
+.project p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+/* View link */
+.project-link-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  letter-spacing: 0.02em;
+  transition: gap 0.2s ease;
+}
+
+.project:hover .project-link-row {
+  gap: 10px;
+}
+
+/* =============================================
+   IMAGE ZOOM EFFECT
+   ============================================= */
 .zoom {
-    border-radius: 5px;
-    transition: transform 0.2s;
-    margin: 0 auto;
+  border-radius: 0;
+  transition: transform 0.4s ease;
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-.zoom:hover {
-    transform: scale(1.05);
+.project:hover .zoom {
+  transform: scale(1.06);
 }
 
-/* Responsive styles */
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media screen and (max-width: 900px) {
+  .projects-container .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 @media screen and (max-width: 700px) {
-    .projects-container {
-        display: block;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .projects-container .projects-grid {
-        display: block;
-    }
-
-    .projects-container .projects-grid .project {
-        padding-bottom: 5%;
-    }
+  .projects-container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }

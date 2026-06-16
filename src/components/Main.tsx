@@ -9,72 +9,41 @@ import "../assets/styles/Main.css";
 import ScrollToTopButton from "./Arrow";
 
 
-
-
 function Main() {
   return (
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-        
         </div>
         <div className="content">
-        
-     <h1 style={{color:'#00FFF7'}}>
+
+          {/* Availability badge */}
+          <div className="hero-badge">
+            <span className="dot"></span>
+            Available for work
+          </div>
+
+          <h1>
             <Typewriter
-              words={['Amira Abubakr..']}
+              words={['Amira Abubakr.']}
               loop={1}
-              
-                cursor={false}
+              cursor={false}
               cursorStyle="|"
-              typeSpeed={90}
+              typeSpeed={80}
               deleteSpeed={50}
               delaySpeed={3000}
             />
           </h1>
-          
-  <p>Front-End Developer.</p>
 
+          <p>Front-End Developer</p>
 
-            <div
-           
-             className="social_icons">
-              <a
-                href="https://github.com/amira-abubakr"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <GitHubIcon />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/amira-abubakr/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkedInIcon />
-            </a>
-       
-            <a
-              href="https://www.facebook.com/amira.abubakr.badran"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FacebookIcon />
-            </a>
-            <a
-              href="https://www.instagram.com/am_bakr7?igsh=MTZjbmFheXhjZ3hz"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <InstagramIcon />
-            </a>
-          </div>
-
-          <div className="mobile_social_icons">
+          {/* Desktop social icons */}
+          <div className="social_icons">
             <a
               href="https://github.com/amira-abubakr"
               target="_blank"
               rel="noreferrer"
+              title="GitHub"
             >
               <GitHubIcon />
             </a>
@@ -82,14 +51,15 @@ function Main() {
               href="https://www.linkedin.com/in/amira-abubakr/"
               target="_blank"
               rel="noreferrer"
+              title="LinkedIn"
             >
               <LinkedInIcon />
             </a>
-          
             <a
               href="https://www.facebook.com/amira.abubakr.badran"
               target="_blank"
               rel="noreferrer"
+              title="Facebook"
             >
               <FacebookIcon />
             </a>
@@ -97,6 +67,43 @@ function Main() {
               href="https://www.instagram.com/am_bakr7?igsh=MTZjbmFheXhjZ3hz"
               target="_blank"
               rel="noreferrer"
+              title="Instagram"
+            >
+              <InstagramIcon />
+            </a>
+          </div>
+
+          {/* Mobile social icons */}
+          <div className="mobile_social_icons">
+            <a
+              href="https://github.com/amira-abubakr"
+              target="_blank"
+              rel="noreferrer"
+              title="GitHub"
+            >
+              <GitHubIcon />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/amira-abubakr/"
+              target="_blank"
+              rel="noreferrer"
+              title="LinkedIn"
+            >
+              <LinkedInIcon />
+            </a>
+            <a
+              href="https://www.facebook.com/amira.abubakr.badran"
+              target="_blank"
+              rel="noreferrer"
+              title="Facebook"
+            >
+              <FacebookIcon />
+            </a>
+            <a
+              href="https://www.instagram.com/am_bakr7?igsh=MTZjbmFheXhjZ3hz"
+              target="_blank"
+              rel="noreferrer"
+              title="Instagram"
             >
               <InstagramIcon />
             </a>
@@ -104,9 +111,7 @@ function Main() {
         </div>
       </div>
       <ScrollToTopButton />
-
     </div>
-    
   );
 }
 
