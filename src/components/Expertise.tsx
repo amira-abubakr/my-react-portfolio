@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.css';
-import { faBorderAll, faGlobe, faPencilRuler, faPlug } from "@fortawesome/free-solid-svg-icons";
+import { faBorderAll, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 const labelsFirst = [
     "React",
